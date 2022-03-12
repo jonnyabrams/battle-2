@@ -20,14 +20,15 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
-    @player_1 = $player_1.name
-    @player_2 = $player_2.name
+    @player_1 = $player_1
+    @player_2 = $player_2
     erb :play
   end
 
   get '/confirmation' do
-    @player_1 = $player_1.name
-    @player_2 = $player_2.name
+    @player_1 = $player_1
+    @player_2 = $player_2
+    @player_1.attack(@player_2)
     erb :confirmation
   end
  
